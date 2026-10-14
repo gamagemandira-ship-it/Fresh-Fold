@@ -1,0 +1,15 @@
+C:\Users\user\Documents\FreshFold\FreshFold\src\main.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\main.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Models\Customer.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\Customer.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Models\LaundryOrder.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\LaundryOrder.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Models\DryCleaningOrder.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\DryCleaningOrder.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Models\OrderFactory.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\OrderFactory.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Database\DatabaseConfig.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\DatabaseConfig.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Database\DatabaseManager.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\DatabaseManager.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Services\AuthenticationService.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\AuthenticationService.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Services\BillingService.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\BillingService.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Forms\LoginForm.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\LoginForm.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Forms\DashboardForm.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\DashboardForm.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Forms\CustomerForm.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\CustomerForm.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Forms\OrderForm.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\OrderForm.obj
+C:\Users\user\Documents\FreshFold\FreshFold\src\Forms\BillingForm.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\BillingForm.obj
+C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cpp;C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.obj

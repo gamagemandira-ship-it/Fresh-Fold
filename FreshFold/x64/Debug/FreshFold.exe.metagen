@@ -1,0 +1,63 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly FreshFold, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly MySql.Data, Version=26.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class FreshFold.DatabaseException: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Exception
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FreshFold.Ui: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Navy(): PrivateScope, Public, Static, HideBySig
+    NavyLight(): PrivateScope, Public, Static, HideBySig
+    Background(): PrivateScope, Public, Static, HideBySig
+    SuccessGreen(): PrivateScope, Public, Static, HideBySig
+    ErrorRed(): PrivateScope, Public, Static, HideBySig
+    MakeFont(Single, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    StyleForm(Form, String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    MakeHeader(String, String): PrivateScope, Public, Static, HideBySig
+    MakeLabel(String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    MakeTextBox(Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    MakeDropDown(Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    MakeButton(String, Int32, Int32, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    MakeGrid(Int32, Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    FormatColumn(DataGridView, String, String): PrivateScope, Public, Static, HideBySig
+    SetStatus(Label, String, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    ShowError(String): PrivateScope, Public, Static, HideBySig
+    ShowInfo(String): PrivateScope, Public, Static, HideBySig
+    Confirm(String): PrivateScope, Public, Static, HideBySig
+Class FreshFold.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FreshFold.AuthenticationService*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String LoggedInUser 'get ' : 
+  Methods:
+    get_LoggedInUser(): PrivateScope, Public, HideBySig, SpecialName
+Class FreshFold.DashboardForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FreshFold.DatabaseManager*, FreshFold.BillingService*, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean LogoutRequested 'get ' : 
+  Methods:
+    get_LogoutRequested(): PrivateScope, Public, HideBySig, SpecialName
+Class FreshFold.CustomerForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FreshFold.DatabaseManager*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FreshFold.OrderForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FreshFold.DatabaseManager*, FreshFold.BillingService*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FreshFold.BillingForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(FreshFold.DatabaseManager*, FreshFold.BillingService*, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

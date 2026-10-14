@@ -1,0 +1,3 @@
+C:\Users\user\Documents\FreshFold\FreshFold\x64\Debug\MySql.Data.dll
+C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\FreshFold.vcxproj.AssemblyReference.cache
+C:\Users\user\Documents\FreshFold\FreshFold\FreshFold\x64\Debug\FreshFold.vcxproj.Up2Date

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FreshFold - C++/CLI Windows Forms application (.NET Framework 4.8, x64)
+  Requires Visual Studio 2022 with:
+    * "Desktop development with C++" workload
+    * "C++/CLI support for v143 build tools" component
+    * ".NET Framework 4.8 targeting pack"
+  and MySQL Connector/NET (MySql.Data.dll). See README.md.
+-->
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{364353F7-E896-4D93-AC17-DD0B0E83F076}</ProjectGuid>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>FreshFold</RootNamespace>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <!--
+    Folder that contains MySql.Data.dll and its dependency DLLs
+    (copied from the MySQL Connector/NET installation - see README.md).
+    Change this path if you keep the DLLs somewhere else.
+  -->
+  <PropertyGroup>
+    <MySqlConnectorDir Condition="'$(MySqlConnectorDir)'==''">$(MSBuildProjectDirectory)\lib\mysql\</MySqlConnectorDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist "$(MySqlConnectorDir)*.dll" xcopy /Y /D /Q "$(MySqlConnectorDir)*.dll" "$(OutDir)"</Command>
+      <Message>Copying MySQL Connector/NET DLLs next to FreshFold.exe</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist "$(MySqlConnectorDir)*.dll" xcopy /Y /D /Q "$(MySqlConnectorDir)*.dll" "$(OutDir)"</Command>
+      <Message>Copying MySQL Connector/NET DLLs next to FreshFold.exe</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <!-- .NET assemblies used by the program -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MySql.Data">
+      <HintPath>$(MySqlConnectorDir)MySql.Data.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Models\Customer.cpp" />
+    <ClCompile Include="src\Models\LaundryOrder.cpp" />
+    <ClCompile Include="src\Models\DryCleaningOrder.cpp" />
+    <ClCompile Include="src\Models\OrderFactory.cpp" />
+    <ClCompile Include="src\Database\DatabaseConfig.cpp" />
+    <ClCompile Include="src\Database\DatabaseManager.cpp" />
+    <ClCompile Include="src\Services\AuthenticationService.cpp" />
+    <ClCompile Include="src\Services\BillingService.cpp" />
+    <ClCompile Include="src\Forms\LoginForm.cpp" />
+    <ClCompile Include="src\Forms\DashboardForm.cpp" />
+    <ClCompile Include="src\Forms\CustomerForm.cpp" />
+    <ClCompile Include="src\Forms\OrderForm.cpp" />
+    <ClCompile Include="src\Forms\BillingForm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Models\PriceList.h" />
+    <ClInclude Include="src\Models\Customer.h" />
+    <ClInclude Include="src\Models\LaundryOrder.h" />
+    <ClInclude Include="src\Models\DryCleaningOrder.h" />
+    <ClInclude Include="src\Models\OrderFactory.h" />
+    <ClInclude Include="src\Database\DatabaseConfig.h" />
+    <ClInclude Include="src\Database\DatabaseManager.h" />
+    <ClInclude Include="src\Services\AuthenticationService.h" />
+    <ClInclude Include="src\Services\BillingService.h" />
+    <ClInclude Include="src\Utils\StringUtils.h" />
+    <ClInclude Include="src\Forms\UiHelpers.h" />
+    <ClInclude Include="src\Forms\LoginForm.h" />
+    <ClInclude Include="src\Forms\DashboardForm.h" />
+    <ClInclude Include="src\Forms\CustomerForm.h" />
+    <ClInclude Include="src\Forms\OrderForm.h" />
+    <ClInclude Include="src\Forms\BillingForm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="create_release.bat" />
+    <None Include="database\fresh_fold.sql" />
+    <None Include="LICENSE" />
+    <None Include="publish_to_github.bat" />
+    <None Include="README.md" />
+    <None Include="config\database.example.ini" />
+    <None Include="database\freshfold_db.sql" />
+    <None Include="database\sample_data.sql" />
+    <None Include="docs\class-diagram.md" />
+    <None Include="docs\oop-examples.md" />
+    <None Include="docs\testing-checklist.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
